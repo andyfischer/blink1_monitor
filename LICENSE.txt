@@ -1,0 +1,6 @@
+
+This project contains source code from the blink(1) project by ThingM. Specifically
+it is based on the 'commandline' folder from: https://github.com/todbot/blink1
+
+See LICENSE.blink1.txt for applicable license terms. All sources here are released
+under the same license as above.

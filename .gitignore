@@ -1,0 +1,4 @@
+*.dylib
+.gdb_history
+*.o
+/build
