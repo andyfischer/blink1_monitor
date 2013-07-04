@@ -335,11 +335,15 @@ int main(int argc, char** argv)
 
     hid_device* device = blink1_open();
 
-    if (device == NULL)
-        return -1;
+device_disconnected:
+
+    while (device == NULL) {
+        // Keep trying to connect.
+        blink1_sleep(2000);
+        device = blink1_open();
+    }
 
     int iteration_count = 0;
-
 
     while (1) {
 
@@ -356,10 +360,16 @@ int main(int argc, char** argv)
         if (iteration_count >= 2) {
 
             // Fade time is the same as sleep interval, for nice smoothness.
-            blink1_fadeToRGB(device, interval_millis,
+            int rc = blink1_fadeToRGB(device, interval_millis,
                 255 * cpu_usage, 
                 255 * network_usage,
                 255 * disk_usage);
+
+            if (rc < 0) {
+                printf_log("error: write failed, disconnecting\n");
+                device = NULL;
+                goto device_disconnected;
+            }
         }
 
         blink1_sleep(interval_millis);
