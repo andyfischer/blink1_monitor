@@ -4,14 +4,16 @@
 A blink(1) daemon that shows the computer's utilization.
 
 Red channel = CPU usage
+
 Green channel = Network i/o
+
 Blue channel = Disk i/o
 
-More infomation on the blink(1) thing is here: http://thingm.com/products/blink-1.html
+More infomation on the blink(1) thingy is here: http://thingm.com/products/blink-1.html
 
 # Disclaimers
 
-Only supported on OSX.
+Only supported on OSX. Poorly documented.
 
 # Credits
 
