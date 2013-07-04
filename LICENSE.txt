@@ -1,6 +1,11 @@
 
-This project contains source code from the blink(1) project by ThingM. Specifically
-it is based on the 'commandline' folder from: https://github.com/todbot/blink1
+This project contains source code from the blink(1) project by ThingM.
+Specifically it is based on the 'commandline' folder from:
+https://github.com/todbot/blink1 . See LICENSE.thingm.md for applicable
+license terms.
 
-See LICENSE.blink1.txt for applicable license terms. All sources here are released
-under the same license as above.
+This project also contains source code from Darwin by Apple Computer. See
+LICENSE.apple.txt for applicable license terms.
+
+All modifications and original work in this project are released under the
+above licenses.
