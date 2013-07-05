@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <key>Label</key><string>com.paulhodge.blink1_monitor</string>
+    <key>Label</key><string>paulhodge.blink1_monitor</string>
     <key>ProgramArguments</key>
     <array>
       <string>/Users/andy/blink1_monitor/build/blink1_monitor</string>

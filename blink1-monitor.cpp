@@ -29,16 +29,20 @@
 
 #include "blink1-lib.h"
 
-// Switch to enable/disable logging
+#define ENABLE_LOGGING 0
+
+#if ENABLE_LOGGING
 #define printf_log printf
-// #define printf_log
+#else
+#define printf_log(...)
+#endif
 
 /* Mach port, used for various Mach calls. */
 static mach_port_t libtop_port;
 static mach_port_t libtop_master_port;
 
 
-const int interval_millis = 500;
+const int interval_millis = 250;
 
 const double network_max_mb_sec = 1;
 const double disk_max_mb_sec = 20;
@@ -336,8 +340,8 @@ int main(int argc, char** argv)
     hid_device* device = blink1_open();
 
 device_disconnected:
-
     while (device == NULL) {
+        printf("blink1_open failed, will retry..\n");
         // Keep trying to connect.
         blink1_sleep(2000);
         device = blink1_open();
@@ -367,6 +371,7 @@ device_disconnected:
 
             if (rc < 0) {
                 printf_log("error: write failed, disconnecting\n");
+                blink1_close(device);
                 device = NULL;
                 goto device_disconnected;
             }
