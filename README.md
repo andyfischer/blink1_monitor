@@ -9,27 +9,29 @@ Green channel = Network i/o
 
 Blue channel = Disk i/o
 
+Short video of the app in action: https://plus.google.com/111964262474259827421/posts/RVfA63VTRKy
+
 More infomation on the blink(1) thingy is here: http://thingm.com/products/blink-1.html
 
-# Disclaimers
+# Disclaimer
 
-Only supported on OSX. Poorly documented.
+Only supported on OSX.
 
 # Installation
 
-0) Make sure you have Make & Gcc (such as by installing Xcode or Command Line Tools For Xcode)
+0) Make sure you have Make & GCC (such as by installing Xcode or Command Line Tools For Xcode)
 
-1) Run make
+1) Run 'make'
 
-2) Manually run the tool by running `build/blink1_monitor`. Make sure that works.
+2) Manually start the daemon by running `build/blink1_monitor`. Make sure that works (maybe watch a Youtube video and verify that it turns green).
 
-To install as a service that launches on startup:
+Then, to install as a service that launches on startup:
 
 3) Edit the file `paulhodge.blink1_monitor.plist`. You'll need to change this line:
 
     <string>/Users/andy/blink1_monitor/build/blink1_monitor</string>
 
-To an absolute path pointing to the build/blink1_monitor file on your disk.
+to an absolute path pointing to the build/blink1_monitor file on your disk.
 
 4) Restart the computer, or just run these commands:
 
