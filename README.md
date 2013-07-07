@@ -33,6 +33,8 @@ Then, to install as a service that launches on startup:
 
 to an absolute path pointing to the build/blink1_monitor file on your disk.
 
+Copy the modified .plist file to your ~/Library/LaunchAgents directory.
+
 4) Restart the computer, or just run these commands:
 
     launchctl load paulhodge.blink1_monitor.plist
